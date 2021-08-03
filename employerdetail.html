@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>社員登録ページ</title>
+    <link rel="stylesheet" href="http://neco.akarie.co.jp/~m_kona/css/reset.css" />
+    <link rel="stylesheet" href="http://neco.akarie.co.jp/~m_kona/css/style.css" />
+  </head>
+  <body>
+
+    <header class="header inner">
+      <div class="header-inner">
+        <nav class="header-nav">
+          <ul class="header-nav-list">
+            <li class="header-nav-item">
+              <a href="http://neco.akarie.co.jp/~m_kona/employerlist.php" class="">社員リスト</a>
+            </li>
+            <li class="header-nav-item">
+              <a href="http://neco.akarie.co.jp/~m_kona/employerdetail.php" class="">新規登録ページ</a>
+            </li>
+            <li class="header-nav-item">
+               <div style="width:600px">ログイン名：<###LOGINNAME###></div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section id="contact" class="contact section">
+      <div class="contact_inner inner">
+        <div class="contact_head section-title">
+          <div class="contact_head_title">社員登録ページ</div>
+          <div class="contact_head_text">
+            フォームに記入して登録してください
+          </div>
+        </div>
+        <div class="contact_from">
+         <form method="post" action="./employer_regist.php">
+            <dl class="contact-from_dl">
+
+              <div class="contact-from_row">
+                <dt class="contact-from_label">
+                  <label for="" class="is-required">アカウント</label>
+                </dt>
+                <dd class="contact-from_input">
+                   <input type="text" name="employer_account" placeholder="kanri" value="<###ACCOUNT###>" />
+                  </dd>
+               </div>
+               
+               <div class="contact-from_row">
+                  <dt class="contact-from_label">
+                     <label for="" class="is-required">パスワード</label>
+                  </dt>
+                  <dd class="contact-from_input">
+                     <input type="text" name="employer_password" placeholder="password" value="<###PASSWORD###>" />
+                  </dd>
+               </div>
+               
+               <div class="contact-from_row">
+                  <dt class="contact-from_label">
+                     <label for="" class="is-required">従業員名</label>
+                  </dt>
+                  <dd class="contact-from_input">
+                     <input type="text" name="employer_name" placeholder="中村" value="<###NAME###>" />
+                  </dd>
+               </div>
+               
+               <div class="contact-from_row">
+                  <dt class="contact-from_label">
+                     <label for="" class="is-required">従業員名(かな)</label>
+                  </dt>
+                  <dd class="contact-from_input">
+                     <input type="text" name="employer_name_kana" placeholder="なかむら" value="<###NAMEKANA###>" />
+                  </dd>
+               </div>
+               
+               <div class="contact-from_row">
+                 <dt class="contact-from_label">
+                   <label for="your-name" class="is-required">生年月日</label>
+                 </dt>
+                 <dd class="contact-from_input">
+                  <input type="date" name="employer_birth_date" value="<###BIRTHDATE###>" />
+                 </dd>
+               </div>
+
+               <div class="contact-from_row">
+                  <dt class="contact-from_label">
+                     <label for="department" class="is-required">所属部署</label>
+                  </dt>
+                  <dd class="contact-from_input3">
+                     <select name="department">
+                        <###DEPARTMENT###>
+                     </select>
+                  </dd>
+               </div>
+
+               <div class="contact-from_row">
+                  <dt class="contact-from_label">
+                     <label for="position" class="is-required">役職</label>
+                  </dt>
+                  <dd class="contact-from_input3">
+                     <select name="position">
+                        <###POSITION###>
+                     </select>
+                  </dd>
+               </div>
+ 
+               <div class="contact-from_row">
+                 <dt class="contact-from_label">
+                   <label for="your-addless" class="is-required">住所</label>
+                 </dt>
+                 <dd class="contact-from_input">
+                   <input type="text" name="address" placeholder="東京都足立区" value="<###ADDRESS###>" />
+                 </dd>
+               </div>
+             </dl>
+
+             <tr><td>
+
+               <input type="radio" name="submit_option" value="1" <###SUBOPTION1###> />更新
+             
+               <input type="radio" name="submit_option" value="2" <###SUBOPTION2###> />新規
+             
+               <input type="radio" name="submit_option" value="3" <###SUBOPTION3###> />削除
+             
+             </td></tr>
+             
+             <input type="hidden" name="employer_id" value="<###EMPLOYERID###>" />
+             <div class="contact-from_button">
+               <input type="submit" value="新規登録" />
+             </div>
+           </form>
+         </div>
+       </div>
+     </section>
+   </body>
+</html>
+ 
+  
+ 
+
+
+
+
+
+
+<!-- <html>
+
+<head>
+
+<title>
+
+従業員詳細
+
+</title>
+
+<style type="text/css">
+
+   #employerdetail {
+
+      border: 5px solid grey;
+
+   }
+
+   #employerdetail td {
+
+   }
+
+</style>
+
+</head>
+
+<body>
+
+<h2>従業員詳細</h2>
+
+<div style="width:600px">
+
+ログイン名：<###LOGINNAME###>
+
+</div>
+
+<div>
+
+<table id="employerdetail">
+
+<form method="post" action="./employer_regist.php">
+
+<tr>
+
+<td>アカウント：</td><td><input type="text" name="employer_account" value="<###ACCOUNT###>" /></td>
+
+</tr>
+
+
+<tr>
+
+<td>パスワード：</td><td><input type="text" name="employer_password" value="<###PASSWORD###>" /></td>
+
+</tr>
+
+
+<tr>
+
+<td>従業員名：</td><td><input type="text" name="employer_name" value="<###NAME###>" /></td>
+
+</tr>
+
+<tr>
+
+<td>従業員名（かな）：</td><td><input type="text" name="employer_name_kana" value="<###NAMEKANA###>" /></td>
+
+</tr>
+
+<tr>
+
+<td>生年月日：</td><td><input type="date" name="employer_birth_date" value="<###BIRTHDATE###>" /></td>
+
+</tr>
+
+<tr>
+
+<td>所属：</td>
+
+<td>
+
+   <select name="department">
+
+       <###DEPARTMENT###>
+
+   </select>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>役職：</td>
+
+<td>
+
+  <select name="position">
+
+      <###POSITION###>
+
+  </select>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>住所：</td><td><input type="text" name="address" value="<###ADDRESS###>" /></td>
+
+</tr>
+
+<tr><td>
+
+  <input type="radio" name="submit_option" value="1" <###SUBOPTION1###> />更新
+
+  <input type="radio" name="submit_option" value="2" <###SUBOPTION2###> />新規
+
+  <input type="radio" name="submit_option" value="3" <###SUBOPTION3###> />削除
+
+</td></tr>
+
+<tr><td><input type="hidden" name="employer_id" value="<###EMPLOYERID###>" /><input type="submit" value="confirm" /></td></tr>
+
+</form>
+
+</table>
+
+</div>
+
+<div>
+
+<a href="./employerlist.php">go back to list</a>
+
+</div>
+
+</body>
+
+</html> -->

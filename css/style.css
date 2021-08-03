@@ -1,0 +1,289 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap");
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  background: #f3f3f3;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+}
+
+.header {
+  height: 100px;
+
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 83px;
+}
+
+.header-inner {
+
+  align-items: center;
+  height: inherit;
+}
+
+.header-nav {
+  display: -webkit-box;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  justify-content: center;
+  height: inherit;
+  background: #ffffff1a;
+}
+
+.header-nav-list {
+  display: -webkit-box;
+  display: flex;
+  height: inherit;
+  font-family: "Montserrat", sans-serif;
+  align-items: center;
+  font-size: 16px;
+}
+
+.header-nav-list li:not(:first-child) {
+  margin-left: 40px;
+}
+
+
+.header-nav-item {
+  display: block;
+  text-align: center;
+  align-items: center;
+}
+
+
+.table-box{
+  margin-left: 50px;
+  width: 1320px;
+}
+
+.card{
+  width:300px;
+  height:350px;
+}
+
+.table {
+  border-collapse: collapse;
+  border: 1px solid #707070;
+  background: #fff;
+  width: 100%;
+  table-layout: fixed;
+  font-size: 24px;
+}
+
+
+.table th,
+.table td {
+  border: 1px solid #707070;
+  text-align: center;
+  vertical-align: middle;
+  height: 61px;
+}
+
+.table th {
+  background: #3e3e3e;
+  color: #fff;
+  text-align: center;
+  border: 1px solid #707070;
+  font-size: 24px;
+}
+
+.table th:nth-child(1) {
+  width: 262px;
+}
+
+.table td {
+  text-align: center;
+  padding-left: 10px;
+}
+
+.table .textbox {
+  width: 200px;
+}
+
+
+.contact-from_radio {
+  display: flex;
+}
+
+.contact {
+  width: 1280px;
+  height: 1500px;
+  position: relative;
+}
+
+.contact_inner {
+  width: 960px;
+  height: 1002px;
+  position: absolute;
+  top: 60px;
+  margin: 0 160px;
+}
+
+.contact_head {
+  background: url(../img/contact1.png) no-repeat center center/cover;
+  width: inherit;
+  height: 196px;
+}
+
+.contact_head_title {
+  color: #3e3e3e;
+  font-size: 32px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 60px;
+}
+
+.contact_head_text {
+  color: #3e3e3e;
+  font-size: 16px;
+}
+
+.contact_from {
+  height: 1200px;
+  width: inherit;
+  background: #fff;
+}
+
+.contact_from {
+  padding: 60px 100px;
+  border-radius: 0 0 5px 5px;
+}
+
+.contact-from_row {
+  display: flex;
+}
+
+.contact-from_row:not(:first-child) {
+  margin-top: 32px;
+}
+
+.contact-from_row .contact-from_label {
+  width: 190px;
+  padding: 5px 0 0;
+  margin: 0;
+}
+
+.contact-from_row .contact-from_label label {
+  font-weight: 700;
+}
+
+.contact-from_row .contact-from_label label.is-required {
+  display: inline-block;
+}
+
+.contact-from_row .contact-from_label label.is-required::after {
+  content: "必須";
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  background: #e81919;
+  text-align: center;
+  border-radius: 4px;
+  padding: 1px 8px;
+  line-height: 1;
+  width: 100%;
+  margin-left: 15px;
+}
+
+.contact-from_input {
+  border-bottom: 1px solid #707070;
+  width: 530px;
+}
+
+.contact-from_input2 textarea {
+  border: 1px solid #707070;
+  width: 720px;
+  height: 200px;
+}
+
+select {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: 1px solid #707070;
+  background: #fff url(../img/select-arrow.png) no-repeat right 12px center/17px;
+  padding: 6px 16px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: 14px;
+  width: 160px;
+  height: 40px;
+}
+
+.contact-from_row2 {
+  margin-top: 32px;
+}
+
+.contact-from_button {
+  margin-top: 30px;
+  display: inline-block;
+  width: 170px;
+  max-width: 100%;
+  height: 50px;
+  line-height: 45px;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  background: #ffaa3b;
+}
+
+.contact-from_check {
+  margin-top: 40px;
+}
+
+.women {
+  margin-left: 40px;
+}
+/*# sourceMappingURL=style.css.map */
+

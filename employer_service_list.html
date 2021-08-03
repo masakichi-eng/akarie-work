@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>社員リストページ</title>
+    <link rel="stylesheet" href="http://neco.akarie.co.jp/~m_kona/css/reset.css" />
+    <link rel="stylesheet" href="http://neco.akarie.co.jp/~m_kona/css/style.css">
+  </head>
+  <body>
+
+    <header class="header inner">
+      <div class="header-inner">
+        <nav class="header-nav">
+          <ul class="header-nav-list">
+            <li class="header-nav-item">
+              <a href="" class="header-nav-item-link">社員リスト</a>
+            </li>
+            <li class="header-nav-item">
+               <a href="./employerdetail.php"><button type="button">新規社員登録</button></a>
+            </li>
+
+            <li class="header-nav-item">
+              <a href="./service_detail.php"><button type="button">新規サービス登録</button></a>
+           </li>
+           <li class="header-nav-item">
+            <a href="./employer_service_detail.php"><button type="button">新規サービス実績登録</button></a>
+         </li>
+            <li class="header-nav-item">
+               <a href="login.php">ログアウト</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+
+    <div class="table-box">
+      <table class="table">
+         <tr>
+            <th>従業員ID</th><th>サービス名</th><th>提供日</th><th>開始時間</th><th>提供時間</th><th>ご利用者様</th><th>詳細</th>
+         </tr>
+         <###EMPLOYERSERVICELIST###>
+      </table>
+    </div>
+  </body>
+</html>

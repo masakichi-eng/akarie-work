@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>社員リストページ</title>
+    <link rel="stylesheet" href="http://neco.akarie.co.jp/~m_kona/css/reset.css" />
+    <link rel="stylesheet" href="http://neco.akarie.co.jp/~m_kona/css/style.css">
+  </head>
+  <body>
+
+    <header class="header inner">
+      <div class="header-inner">
+        <nav class="header-nav">
+          <ul class="header-nav-list">
+            <li class="header-nav-item">
+              <a href="" class="header-nav-item-link">社員リスト</a>
+            </li>
+            <li class="header-nav-item">
+               <a href="./employerdetail.php"><button type="button">従業員登録</button></a>
+            </li>
+            <li class="header-nav-item">
+               <a href="./service_detail.php"><button type="button">サービス登録</button></a>
+            </li>
+            <li class="header-nav-item">
+               <a href="./service_list.php"><button type="button">サービスリスト</button></a>
+            </li>
+            <li class="header-nav-item">
+               <a href="./employer_service_detail.php"><button type="button">サービス実績登録</button></a>
+            </li>
+            <li class="header-nav-item">
+               <a href="./employer_service_list.php"><button type="button">サービス実績リスト</button></a>
+            </li>
+            <li class="header-nav-item">
+               <a href="login.php">ログアウト</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+
+    <div class="table-box">
+      <table class="table">
+         <tr>
+            <th>従業員ID</th><th>名前</th><th>部署</th><th></th>
+         </tr>
+         <###EMPLOYERLIST###>
+      </table>
+    </div>
+  </body>
+</html>
+
+
+
+
+
+<!-- <html>
+
+<head>
+
+<title>
+
+従業員一覧
+
+</title>
+
+<style type="text/css">
+
+   .employerlist {
+
+      border : blue;
+
+      border-style : solid;
+
+      width:600px;
+
+   }
+
+   .employerlist td {
+
+      border-top:solid 1px;
+
+      border-top:solid 1px;
+
+      line-height:18px;
+
+   }
+
+   .employerlist td:hover {
+
+      background-color:grey;
+
+   }
+
+</style>
+
+</head>
+
+<body>
+
+<h2>従業員一覧</h2>
+
+<div style="width:300px; margin-bottom:10px;float:left">
+
+<a href="./employerdetail.php"><button type="button">新規登録</button></a>
+
+</div>
+
+<div style="width:200px; margin-bottom:10px;float:left">
+
+ログイン名：<###LOGINNAME###>
+
+</div>
+
+<div style="margin-bottom:10px;float:left">
+
+<a href="login.php">ログアウト</a>
+
+</div>
+
+<div style="width:1200px;clear:left">
+
+<table class="employerlist">
+
+<tr>
+
+<th>従業員ID</th><th>名前</th><th>部署</th><th></th>
+
+</tr>
+
+<###EMPLOYERLIST###>
+
+</table>
+
+</div>
+
+</body>
+
+</html> -->
