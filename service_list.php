@@ -33,7 +33,7 @@
 
     // サービスを抽出するSQLを用意
 
-    $stmt=$dbh->prepare('select name,time,price,service_id
+    $stmt=$dbh->prepare('select service_name,time,price,service_id
         from service_master');
 
     //実行
@@ -54,7 +54,7 @@
 
            $service_id = $row['service_id'];
 
-           $service_name = $row['name'];
+           $service_name = $row['service_name'];
 
            $service_time = $row['time'];
 

@@ -63,7 +63,7 @@
 
         // サービスを抽出
 
-        $stmt=$dbh->prepare('select service_master.name name,service_master.time time, service_master.price price,service_master.service_id service_id
+        $stmt=$dbh->prepare('select service_master.service_name service_name,service_master.time time, service_master.price price,service_master.service_id service_id
         from service_master where service_master.id = :target_service_id');
 
         //変数紐づけ
@@ -90,7 +90,7 @@
 
         //変数にテーブルの値をセット
 
-        $service_name = $result['name'];
+        $service_name = $result['service_name'];
 
         $service_time = $result['time'];
 

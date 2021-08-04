@@ -33,8 +33,11 @@
 
     // サービスを抽出するSQLを用意
 
-    $stmt=$dbh->prepare('select employer_id,service_id,date,scheduled,offer_time,client_name,employer_service_id
-        from employer_service_master');
+    // $stmt=$dbh->prepare('select employer_id,service_id,date,scheduled,offer_time,client_name,employer_service_id
+    //     from employer_service_master');
+
+    $stmt=$dbh->prepare('select employer_service_master.employer_id,employer_service_master.service_id,employer_service_master.date,employer_service_master.scheduled,employer_service_master.offer_time,employer_service_master.client_name,employer_service_master.employer_service_id,service_master.service_name,employer_master.name from employer_service_master,employer_master,service_master where employer_service_master.service_id=service_master.service_id and employer_service_master.employer_id=employer_master.employer_id order by employer_service_master.id');
+
 
     //実行
 
@@ -54,9 +57,9 @@
 
            $employer_service_id = $row['employer_service_id'];
            
-           $employer_id = $row['employer_id'];
+           $employer_name = $row['name'];
            
-           $service_id= $row['service_id'];
+           $service_name= $row['service_name'];
 
            $employer_service_date = $row['date'];
 
@@ -69,7 +72,7 @@
 
            // 一覧用の値をセット
 
-           $employer_service_line.="<tr><td>".$employer_id."</td><td>".$service_id."</td><td>".$employer_service_date."</td><td>".$employer_service_scheduled_time."</td><td>".$employer_service_offer_time."</td><td>".$employer_service_client_name."</td><td><a href='./employer_service_detail.php?targetID=".$employer_service_id."'><button type='button'>詳細</button></a></td></tr>\n";
+           $employer_service_line.="<tr><td>".$employer_name."</td><td>".$service_name."</td><td>".$employer_service_date."</td><td>".$employer_service_scheduled_time."</td><td>".$employer_service_offer_time."</td><td>".$employer_service_client_name."</td><td><a href='./employer_service_detail.php?targetID=".$employer_service_id."'><button type='button'>詳細</button></a></td></tr>\n";
 
         }
 

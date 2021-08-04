@@ -109,7 +109,7 @@
   
       } else if($submit_option=='1') {
   
-          $stmt = $dbh->prepare('update service_master set name=:name,time=:time,price=:price where service_id=:service_id');
+          $stmt = $dbh->prepare('update service_master set service_name=:name,time=:time,price=:price where service_id=:service_id');
   
           //変数紐づけ
   
@@ -153,7 +153,7 @@
         $stmt = null;
 
 
-        $stmt=$dbh->prepare('insert into service_master(id,name,time,price,service_id)
+        $stmt=$dbh->prepare('insert into service_master(id,service_name,time,price,service_id)
         values(:id,:name,:time,:price,:service_id)');
   
           //変数紐づけ
