@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>社員登録ページ</title>
+    <link rel="stylesheet" href="http://neco.akarie.co.jp/~m_kona/css/reset.css" />
+    <link rel="stylesheet" href="http://neco.akarie.co.jp/~m_kona/css/style.css" />
+  </head>
+  <body>
+
+    <header class="header inner">
+      <div class="header-inner">
+        <nav class="header-nav">
+          <ul class="header-nav-list">
+            <li class="header-nav-item">
+              <a href="http://neco.akarie.co.jp/~m_kona/helper_employer_service_list.php" class="">サービス実績リスト</a>
+            </li>
+            <li class="header-nav-item">
+               <div style="width:600px">ログイン名：<###LOGINNAME###></div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section id="contact" class="contact section">
+      <div class="contact_inner inner">
+        <div class="contact_head section-title">
+          <div class="contact_head_title">サービス実績登録ページ</div>
+          <div class="contact_head_text">
+            フォームに記入して登録してください
+          </div>
+        </div>
+        <div class="contact_from">
+         <form method="post" action="./helper_employer_service_regist.php">
+            <dl class="contact-from_dl">
+
+               <div class="contact-from_row">
+                <dt class="contact-from_label">
+                   <label for="employer" class="is-required">担当者</label>
+                </dt>
+                <dd class="contact-from_input3">
+                     <###LOGINNAME###>
+                </dd>
+               </div>
+               
+               <div class="contact-from_row">
+                <dt class="contact-from_label">
+                   <label for="service" class="is-required">サービス内容</label>
+                </dt>
+                <dd class="contact-from_input3">
+                   <select name="service_id">
+                      <###SERVICEID###>
+                   </select>
+                </dd>
+               </div>
+               
+               <div class="contact-from_row">
+                  <dt class="contact-from_label">
+                     <label for="" class="is-required">実施日</label>
+                  </dt>
+                  <dd class="contact-from_input">
+                     <input type="date" name="service_date" placeholder="3000" value="<###SERVISEDATE###>" />
+                  </dd>
+               </div>
+
+               <div class="contact-from_row">
+                  <dt class="contact-from_label">
+                     <label for="" class="is-required">実施開始時刻</label>
+                  </dt>
+                  <dd class="contact-from_input">
+                    <label for="scheduled-time">予定時刻を入力</label>
+                    <input type="time" name="scheduled_time" value="<###SCHEDULEDTIME###>">
+                  </dd>
+               </div>
+
+               <div class="contact-from_row">
+                <dt class="contact-from_label">
+                   <label for="" class="is-required">実施時間</label>
+                </dt>
+                <dd class="contact-from_input">
+                   <input type="text" name="offer_time" placeholder="1" value="<###OFFERTIME###>" />
+                </dd>
+               </div>
+
+               <div class="contact-from_row">
+                <dt class="contact-from_label">
+                   <label for="" class="is-required">ご利用者様</label>
+                </dt>
+                <dd class="contact-from_input">
+                   <input type="text" name="client_name" placeholder="田中" value="<###CLIENTNAME###>" />
+                </dd>
+               </div>
+               
+ 
+             </dl>
+
+             <tr><td>
+
+               <input type="radio" name="submit_option" value="1" <###SUBOPTION1###> />更新
+             
+               <input type="radio" name="submit_option" value="2" <###SUBOPTION2###> />新規
+             
+               <input type="radio" name="submit_option" value="3" <###SUBOPTION3###> />削除
+             
+             </td></tr>
+             
+             <input type="hidden" name="employer_service_id" value="<###EMPLOYERSERVICEID###>" />
+             <div class="contact-from_button">
+               <input type="submit" value="新規登録" />
+             </div>
+           </form>
+         </div>
+       </div>
+     </section>
+   </body>
+</html>
