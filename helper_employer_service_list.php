@@ -11,6 +11,14 @@
 
     $login_id=$_SESSION['employer_id'];
 
+    // POST PARAMETER
+
+    $service_month='';
+
+    if (isset($_POST['service_month'])) {
+        $service_month=$_POST['service_month'];
+    }
+
     try {
 
         //接続情報設定
@@ -31,14 +39,49 @@
 
     }
 
+
+
+    if($service_month != "") {
+
+
     // サービスを抽出するSQLを用意
 
-    $stmt=$dbh->prepare('select employer_service_master.employer_id,employer_service_master.service_id,employer_service_master.date,employer_service_master.scheduled,employer_service_master.offer_time,employer_service_master.client_name,employer_service_master.employer_service_id,service_master.service_name,employer_master.name from employer_service_master,employer_master,service_master where employer_service_master.service_id=service_master.service_id and employer_service_master.employer_id=employer_master.employer_id order by employer_service_master.id');
+    $stmt=$dbh->prepare('select employer_service_master.employer_id,employer_service_master.service_id,employer_service_master.date,employer_service_master.scheduled,employer_service_master.offer_time,employer_service_master.client_name,employer_service_master.employer_service_id,service_master.service_name,employer_master.name from employer_service_master,employer_master,service_master where employer_service_master.service_id=service_master.service_id and employer_service_master.employer_id=employer_master.employer_id and employer_master.employer_id=:target_employer_id and DATE_FORMAT(employer_service_master.date, "%Y-%m")=:target_service_month order by employer_service_master.id');
+
+
+
+    //変数紐づけ
+
+    $stmt->bindParam(":target_employer_id",$login_id,PDO::PARAM_INT);
+
+    $stmt->bindParam(":target_service_month",$service_month,PDO::PARAM_INT);
 
 
     //実行
 
     $stmt->execute();
+
+    } else {
+
+
+
+
+        // サービスを抽出するSQLを用意
+
+        $stmt=$dbh->prepare('select employer_service_master.employer_id,employer_service_master.service_id,employer_service_master.date,employer_service_master.scheduled,employer_service_master.offer_time,employer_service_master.client_name,employer_service_master.employer_service_id,service_master.service_name,employer_master.name from employer_service_master,employer_master,service_master where employer_service_master.service_id=service_master.service_id and employer_service_master.employer_id=employer_master.employer_id and employer_master.employer_id=:target_employer_id order by employer_service_master.id');
+
+
+        //変数紐づけ
+    
+        $stmt->bindParam(":target_employer_id",$login_id,PDO::PARAM_INT);
+    
+        //実行
+    
+        $stmt->execute();
+
+    }
+
+
 
     // 後ほどhtmlファイルで置き換えするための変数の初期化
 
@@ -51,6 +94,8 @@
         // if no one matched, move login
 
         foreach ($result as $row) {
+
+           $employer_id = $row['employer_id'];
 
            $employer_service_id = $row['employer_service_id'];
            
@@ -66,9 +111,10 @@
 
            $employer_service_client_name = $row['client_name'];
 
+           
+
 
            // 一覧用の値をセット
-
            $employer_service_line.="<tr><td>".$employer_name."</td><td>".$service_name."</td><td>".$employer_service_date."</td><td>".$employer_service_scheduled_time."</td><td>".$employer_service_offer_time."</td><td>".$employer_service_client_name."</td><td><a href='./employer_service_detail.php?targetID=".$employer_service_id."'><button type='button'>詳細</button></a></td></tr>\n";
 
         }
@@ -92,11 +138,11 @@
 
     // htmlファイルが読み込める状態かどうかを確認する
 
-    if(is_readable('./employer_service_list.html')) {
+    if(is_readable('./helper_employer_service_list.html')) {
 
     // ファイル内容を変数に取り込む
 
-    $fp=fopen('./employer_service_list.html','r');
+    $fp=fopen('./helper_employer_service_list.html','r');
 
 
 
@@ -117,6 +163,9 @@
        // 従業員リスト
 
        $lines=str_replace("<###EMPLOYERSERVICELIST###>",$employer_service_line,$line1);
+
+       $lines=str_replace("<###SERVICEMONTH###>",$service_month,$lines);
+       
 
        echo $lines;
 

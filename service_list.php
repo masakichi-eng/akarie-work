@@ -64,7 +64,7 @@
 
            // 一覧用の値をセット
 
-           $service_line.="<tr><td>".$service_id."</td><td>".$service_name."</td><td>".$service_time."</td><td><a href='./service_detail.php?targetID=".$service_id."'><button type='button'>詳細</button></a></td></tr>\n";
+           $service_line.="<tr><td>".$service_id."</td><td>".$service_name."</td><td>".$service_time."</td><td>".$service_price."</td><td><a href='./service_detail.php?targetID=".$service_id."'><button type='button'>詳細</button></a></td></tr>\n";
 
         }
 
