@@ -10,25 +10,12 @@
   </head>
   <body>
 
-    <header class="header inner">
-      <div class="header-inner">
-        <nav class="header-nav">
-          <ul class="header-nav-list">
-            <li class="header-nav-item">
-              <a href="./employerlist.php" class="header-nav-item-link">TOP</a>
-            </li>
-
-            <li class="header-nav-item">
-              <a href="./employer_service_list_month.php"><button type="button">月別サービス実績</button></a>
-            </li>
-
-           <li class="header-nav-item">
-            <a href="./employer_service_month.php"><button type="button">月別サービス実績合計</button></a>
-          </li>
-          </ul>
-        </nav>
+    <form method="post" action="./employer_service_list_month.php" style="margin-left: 50px;" >
+      <input type="month" name="service_month" style="background-color: white;" value="<###SERVICEMONTH###>">
+      <div class="contact-from_button">
+        <input type="submit" value="検索" />
       </div>
-    </header>
+    </form>
 
 
     <div class="table-box">

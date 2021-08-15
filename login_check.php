@@ -83,7 +83,13 @@
 
    $dbh = null;
 
-   header('location: ./employerlist.php');
+   if($employer_id != 1){
+      header('location: ./helper_employer_service_list.php');
+   } else{
+      header('location: ./employerlist.php');
+   }
+
+   
 
    exit;
 
