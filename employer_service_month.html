@@ -10,16 +10,28 @@
   </head>
   <body>
 
+    <header class="header inner">
+      <div class="header-inner">
+        <nav class="header-nav">
+          <ul class="header-nav-list">
+            <li class="header-nav-item">
+              <a href="./employerlist.php" class="header-nav-item-link">TOP</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
     <div class="table-box">
       <table class="table">
          <tr>
-            <th>従業員ID</th><th>日付</th><th>合計時間</th>
+          <th>従業員ID</th><th>従業員名</th><th>日付</th><th>合計時間(分)</th>
          </tr>
          <###EMPLOYERSERVICEMONTH###>
       </table>
       <table class="table">
         <tr>
-           <th style="background: #ffaa3b;">全ての合計時間</th>
+           <th style="background: #ffaa3b;">全ての合計時間(分)</th>
         </tr>
         <tr><td><###EMPLOYERSERVICEALLTIME###></td></tr>
      </table>

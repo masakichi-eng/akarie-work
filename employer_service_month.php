@@ -45,6 +45,8 @@
 
         foreach ($result as $row) {
 
+           $employer_id = $row['employer_id'];
+           
            $employer_name = $row['name'];
 
            $employer_service_date = $row['DATE_FORMAT(employer_service_master.date, "%Y年%m月")'];
@@ -53,7 +55,7 @@
 
            // 一覧用の値をセット
 
-           $employer_service_line.="<tr><td>".$employer_name."</td><td>".$employer_service_date."</td><td>".$employer_service_offer_time."</td></tr>\n";
+           $employer_service_line.="<tr><td>".$employer_id."</td><td>".$employer_name."</td><td>".$employer_service_date."</td><td>".$employer_service_offer_time."</td></tr>\n";
         }
 
         /* 結果セットを開放します */

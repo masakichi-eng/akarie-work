@@ -31,7 +31,7 @@
 
    //SQL構文を作成
 
-   $stmt = $dbh->prepare('select id,name from employer_master where account= :account and password = :password');
+   $stmt = $dbh->prepare('select id,name,position_id from employer_master where account= :account and password = :password');
 
    //変数紐づけ
 
@@ -61,6 +61,8 @@
 
    $employer_name = $result['name'];
 
+   $employer_position_id = $result['position_id'];
+
    // keep login information between screens
 
    session_save_path('/home/m_kona/session/');
@@ -83,7 +85,7 @@
 
    $dbh = null;
 
-   if($employer_id != 1){
+   if($employer_position_id != 1){
       header('location: ./helper_employer_service_list.php');
    } else{
       header('location: ./employerlist.php');

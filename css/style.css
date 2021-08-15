@@ -128,9 +128,9 @@ a {
   font-size: 24px;
 }
 
-.table th:nth-child(1) {
+/* .table th:nth-child(1) {
   width: 262px;
-}
+} */
 
 .table td {
   text-align: center;

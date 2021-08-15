@@ -158,7 +158,7 @@
 
        // ログイン名
 
-       $line1=str_replace("<###LOGINNAME###>",$login_id,$line);
+       $line1=str_replace("<###LOGINNAME###>",$login_name,$line);
 
        // 従業員リスト
 

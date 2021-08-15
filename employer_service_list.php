@@ -53,6 +53,8 @@
         foreach ($result as $row) {
 
            $employer_service_id = $row['employer_service_id'];
+
+           $employer_id = $row['employer_id'];
            
            $employer_name = $row['name'];
            
@@ -69,7 +71,7 @@
 
            // 一覧用の値をセット
 
-           $employer_service_line.="<tr><td>".$employer_name."</td><td>".$service_name."</td><td>".$employer_service_date."</td><td>".$employer_service_scheduled_time."</td><td>".$employer_service_offer_time."</td><td>".$employer_service_client_name."</td><td><a href='./employer_service_detail.php?targetID=".$employer_service_id."'><button type='button'>詳細</button></a></td></tr>\n";
+           $employer_service_line.="<tr><td>".$employer_id."</td><td>".$employer_name."</td><td>".$service_name."</td><td>".$employer_service_date."</td><td>".$employer_service_scheduled_time."</td><td>".$employer_service_offer_time."</td><td>".$employer_service_client_name."</td><td><a href='./employer_service_detail.php?targetID=".$employer_service_id."'><button type='button'>詳細</button></a></td></tr>\n";
 
         }
 
